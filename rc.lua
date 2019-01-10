@@ -441,6 +441,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"    }, "d", function () awful.util.spawn("doublecmd") end),
     awful.key({ modkey, "Shift"    }, "n", function () awful.util.spawn("code") end),
 
+    awful.key({                    }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master playback 5%-") end),
+    awful.key({                    }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master playback 5%+") end),
+    awful.key({                    }, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master 1+ toggle") end),
+
 
     awful.key({ modkey, "Control" }, "n",
               function ()
