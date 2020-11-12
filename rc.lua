@@ -304,7 +304,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
 --    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    awful.tag({ "⠐", "⠡", "⠪", "⠵", "⠻", "⠿" }, s, awful.layout.layouts[1])
+    awful.tag({ "⠐", "⠡", "⠪", "⠵", "⠻", "⠿", 'i' }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -430,16 +430,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"    }, "f", function () awful.util.spawn("firefox")     end),
     awful.key({ modkey, "Shift"    }, "e", function () awful.util.spawn("nautilus")      end),
     awful.key({ modkey, "Shift"    }, "w", function () awful.util.spawn("xfce4-notes") end),
-    awful.key({ modkey, "Shift"    }, "s", function () awful.util.spawn("subl")        end),
+    awful.key({ modkey, "Shift"    }, "s", function () awful.util.spawn("spyder")        end),
     awful.key({ modkey, "Shift"    }, "g", function () awful.util.spawn("google-chrome") end),
-    awful.key({ modkey, "Shift"    }, "n", function () awful.util.spawn("xfce4-terminal") end),
-    awful.key({					   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
+    awful.key({			   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
     awful.key({ modkey, "Shift"    }, "o", function () awful.util.spawn("xfce4-session-logout") end),
     awful.key({ modkey, "Shift"    }, "a", function () awful.util.spawn("xfce4-appfinder") end),
     awful.key({ modkey, "Shift"    }, "y", function () awful.util.spawn("xfce4-display-settings") end),
-    awful.key({ modkey, "Shift"    }, "v", function () awful.util.spawn("xfce4-mixer") end),
+    awful.key({ modkey, "Shift"    }, "m", function () awful.util.spawn("xfce4-mixer") end),
     awful.key({ modkey, "Shift"    }, "d", function () awful.util.spawn("doublecmd") end),
-    awful.key({ modkey, "Shift"    }, "n", function () awful.util.spawn("code") end),
+    awful.key({ modkey, "Shift"    }, "v", function () awful.util.spawn("code") end),
+    awful.key({ modkey, "Shift"    }, "j", function () awful.util.spawn("joplin") end),
 
     awful.key({                    }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master playback 5%-") end),
     awful.key({                    }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master playback 5%+") end),
@@ -626,17 +626,34 @@ awful.rules.rules = {
 --      }, properties = { titlebars_enabled = true }
 --    },
 
+    -- tags {"⠐", "⠡", "⠪", "⠵", "⠻", "⠿", 'i' }
     -- Set Firefox to always map on the tag named "2" on screen 1.
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = "⠐" }
     },
 
-    { rule = { class = "spyder" },
-      properties = { screen = 1, tag = "⠡" }
+    { rule = { class = "Spyder" },
+      properties = { screen = 1, tag = "⠿" }
     },
 
-    { rule = { class = "code" },
+    { rule = { instance = "code" },
       properties = { screen = 1, tag = "⠪" }
+    },
+
+    { rule = { instance = "joplin" },
+      properties = { screen = 1, tag = "i" }
+    },
+
+    { rule = { instance = "thunderbird" },
+      properties = { screen = 1, tag = "i" }
+    },
+
+    { rule = { instance = "seafile-applet" },
+      properties = { screen = 1, tag = "i" }
+    },
+
+    { rule = { instance = "doublecmd" },
+      properties = { screen = 1, tag = "⠵" }
     },
 }
 -- }}}
