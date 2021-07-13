@@ -429,7 +429,6 @@ globalkeys = gears.table.join(
     -- User
     awful.key({ modkey, "Shift"    }, "f", function () awful.util.spawn("firefox")     end),
     awful.key({ modkey, "Shift"    }, "e", function () awful.util.spawn("nautilus")      end),
-    awful.key({ modkey, "Shift"    }, "w", function () awful.util.spawn("xfce4-notes") end),
     awful.key({ modkey, "Shift"    }, "s", function () awful.util.spawn("spyder")        end),
     awful.key({ modkey, "Shift"    }, "g", function () awful.util.spawn("google-chrome") end),
     awful.key({			   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
@@ -652,9 +651,6 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "i" }
     },
 
-    { rule = { instance = "doublecmd" },
-      properties = { screen = 1, tag = "⠵" }
-    },
 }
 -- }}}
 
