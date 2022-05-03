@@ -629,32 +629,29 @@ awful.rules.rules = {
     -- tags {"⠐", "⠡", "⠪", "⠵", "⠻", "⠿", 'i' }
     -- Set Firefox to always map on the tag named "2" on screen 1.
     { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = "⠐" }
+      properties = { tag = "⠐" }
     },
 
     { rule = { class = "Spyder" },
-      properties = { screen = 1, tag = "⠿" }
+      properties = { tag = "⠿" }
     },
 
     { rule = { instance = "code" },
-      properties = { screen = 1, tag = "⠪" }
+      properties = { tag = "⠪" }
     },
 
     { rule = { instance = "joplin" },
-      properties = { screen = 1, tag = "i" }
+      properties = { tag = "i" }
     },
 
     { rule = { instance = "thunderbird" },
-      properties = { screen = 1, tag = "i" }
+      properties = { tag = "i" }
     },
 
     { rule = { instance = "seafile-applet" },
-      properties = { screen = 1, tag = "i" }
+      properties = { tag = "i" }
     },
 
-    { rule = { instance = "doublecmd" },
-      properties = { screen = 1, tag = "⠵" }
-    },
 }
 -- }}}
 
